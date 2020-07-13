@@ -19,16 +19,16 @@
     
 	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">    
 	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>    
-	<property name="url" value="jdbc:mysql://localhost:3306/emp"></property>    
+	<property name="url" value="jdbc:mysql://localhost:3306/emp?serverTimezone=UTC"></property>    
 	<property name="username" value="root"></property>    
 	<property name="password" value=""></property>    
-	</bean>    
+	</bean>    	
         
-    <bean id ="jdbcTemp" class = "org.springframework.jdbc.core.JdbcTemplate">
-    	<property name="dataSouce" ref ="ds"/>
+    <bean id ="jdbcTemplate" class = "org.springframework.jdbc.core.JdbcTemplate">
+    	<property name="dataSource" ref ="ds"/>
     </bean> 
     
-    <bean id ="empdao" class = "com.nyn.dao.EmployeeDao">
-    	<property name="jdbctemplate"  ref ="jdbctemp"/>
+    <bean id ="empdao" class = "com.nyn.doa.EmployeeDao">
+    	<property name="jdbcTemplate"  ref ="jdbcTemplate"/>
     </bean>
 </beans>
