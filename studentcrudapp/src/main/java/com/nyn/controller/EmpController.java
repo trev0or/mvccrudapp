@@ -2,6 +2,7 @@ package com.nyn.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,6 +39,13 @@ public class EmpController {
 		return mv;
 		}
 		
+		
+	}
+	@RequestMapping(value="/delete/{id}",method = RequestMethod.DELETE)
+	public void delete(@PathVariable("id") int id) {
+		
+		int out = dao.deleteEmp(id);
+		System.out.println(out+"records deleted");
 		
 	}
 

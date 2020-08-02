@@ -18,5 +18,11 @@ public class EmployeeDao {
 		String sql = "insert into employee values('"+id+"','"+name+"','"+salary+"')";
 		return jdbcTemplate.update(sql);
 	}
+	
+	public int deleteEmp(int id) {
+		String sql = "delete from employee where id  = '"+id+"'";
+		
+		return jdbcTemplate.update(sql);
+	}
 
 }
