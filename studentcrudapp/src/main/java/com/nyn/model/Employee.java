@@ -1,5 +1,8 @@
 package com.nyn.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Employee {
  private int id;
  private String name;
@@ -19,8 +22,14 @@ public void setName(String name) {
 public float getSalary() {
 	return salary;
 }
+
 public void setSalary(float salary) {
 	this.salary = salary;
 }
+@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Name :-"+name+" "+"id:- "+id+" "+"salary:- "+salary;
+	}
 	
 }
