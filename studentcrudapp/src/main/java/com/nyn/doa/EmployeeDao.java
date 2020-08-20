@@ -1,6 +1,13 @@
 package com.nyn.doa;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+
+import com.nyn.model.Employee;
 
 public class EmployeeDao {
 	
@@ -23,6 +30,21 @@ public class EmployeeDao {
 		String sql = "delete from employee where id  = '"+id+"'";
 		
 		return jdbcTemplate.update(sql);
+	}
+	
+	public List<Employee> getEmployees(){
+		return jdbcTemplate.query("select * from employee", new RowMapper<Employee>() {
+
+			public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
+				// TODO Auto-generated method stub
+				Employee e  = new Employee();
+				e.setId(rs.getInt(1));
+				e.setName(rs.getString(2));
+				e.setSalary(rs.getFloat(3));
+				return e;
+			}
+			
+		});
 	}
 
 }

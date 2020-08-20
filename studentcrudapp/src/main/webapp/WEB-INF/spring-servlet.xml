@@ -31,6 +31,9 @@
     <bean id ="empdao" class = "com.nyn.doa.EmployeeDao">
     	<property name="jdbcTemplate"  ref ="jdbc"/>
     </bean>
+    <bean id ="empservice" class = "com.nyn.service.EmpService">
+    	
+    </bean>
     
    
 </beans>

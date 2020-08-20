@@ -42,6 +42,11 @@
     <artifactId>spring-jdbc</artifactId>  
     <version>5.1.1.RELEASE</version>  
 </dependency>
+<dependency> 
+    <groupId>com.opencsv</groupId> 
+    <artifactId>opencsv</artifactId> 
+    <version>4.1</version> 
+</dependency> 
   </dependencies>
   <build>
     <finalName>studentcrudapp</finalName>
