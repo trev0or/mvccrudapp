@@ -99,9 +99,7 @@ public class EmpService {
 	  
 	
 	  byte[] b =Files.readAllBytes(Paths.get(file.getPath())); 
-	  System.out.println("data aadded to the zip file");
 	  file.delete();
-	  
 	  return ResponseEntity.ok()
 				// Content-Disposition
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + file.getName())
