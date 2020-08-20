@@ -102,6 +102,7 @@ public class EmpService {
 	  System.out.println("data aadded to the zip file");
 	  file.delete();
 	  System.out.println("zip file deleted"); 
+	  System.out.println("zip file deleted"); 
 	  return ResponseEntity.ok()
 				// Content-Disposition
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + file.getName())
